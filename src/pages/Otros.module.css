@@ -1,0 +1,216 @@
+/* ─── Otros.module.css ─── */
+
+.page {
+    min-height: 100vh;
+    padding-bottom: var(--space-16);
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, var(--cine-black) 0%, #0d0020 60%, var(--cine-black) 100%);
+    padding: var(--space-16) var(--space-6) var(--space-12);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center top, rgba(229, 9, 20, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.heroTitle {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    letter-spacing: 4px;
+    color: var(--cine-yellow);
+    text-transform: uppercase;
+    margin: 0 0 var(--space-3) 0;
+    position: relative;
+}
+
+.heroSubtitle {
+    color: var(--cine-text-muted);
+    font-size: var(--text-lg);
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+/* Content */
+.content {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--space-10) var(--space-6);
+}
+
+.sectionTitle {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    letter-spacing: 2px;
+    color: var(--cine-text);
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
+}
+
+.titleDivider {
+    width: 60px;
+    height: 3px;
+    background: var(--cine-yellow);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-8);
+}
+
+/* Services grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+}
+
+/* Service card */
+.serviceCard {
+    background-color: var(--cine-card);
+    border: 1px solid var(--cine-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    transition:
+        transform var(--transition-smooth),
+        box-shadow var(--transition-smooth),
+        border-color var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.serviceCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--cine-yellow), var(--cine-yellow-dark));
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.serviceCard:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg), var(--shadow-gold);
+    border-color: var(--cine-yellow);
+}
+
+.serviceCard:hover::before {
+    opacity: 1;
+}
+
+.serviceIcon {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.serviceTitle {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    letter-spacing: 1.5px;
+    color: var(--cine-text);
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.serviceDescription {
+    color: var(--cine-text-muted);
+    font-size: var(--text-sm);
+    line-height: 1.7;
+    flex: 1;
+}
+
+.serviceFeatures {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.serviceFeature {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--cine-text-muted);
+}
+
+.serviceFeature::before {
+    content: '✓';
+    color: var(--cine-yellow);
+    font-weight: 700;
+    font-size: var(--text-sm);
+    flex-shrink: 0;
+}
+
+.serviceBtn {
+    display: block;
+    width: 100%;
+    padding: var(--space-3) var(--space-5);
+    background-color: transparent;
+    color: var(--cine-yellow);
+    border: 1.5px solid var(--cine-yellow);
+    border-radius: var(--radius-md);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    transition:
+        background-color var(--transition-base),
+        color var(--transition-base),
+        transform var(--transition-fast);
+    margin-top: auto;
+}
+
+.serviceBtn:hover {
+    background-color: var(--cine-yellow);
+    color: var(--cine-black);
+    transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-5);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .heroTitle {
+        font-size: 2.8rem;
+    }
+
+    .content {
+        padding: var(--space-8) var(--space-4);
+    }
+
+    .serviceCard {
+        padding: var(--space-6);
+    }
+}
+
+@media (max-width: 480px) {
+    .heroTitle {
+        font-size: 2.2rem;
+    }
+}

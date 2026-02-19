@@ -1,0 +1,116 @@
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #121212;
+  /* Very dark background */
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  background-color: #121212;
+}
+
+/* Header Styles */
+.header {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #000000;
+  color: #ffc107;
+  /* Cinema Gold */
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #333;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* App Container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+/* Main Content — pages control their own layout */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1;
+  padding-top: var(--header-height, 72px);
+}
+
+/* Movie Card Styles */
+.movie-card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  height: 100%;
+  /* Fill grid cell height */
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+  border-color: #ffc107;
+}
+
+.movie-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Target the button inside the movie card to enhance it */
+.movie-card button {
+  width: 100% !important;
+  /* Force full width */
+  padding: 12px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px;
+  background-color: #ffc107 !important;
+  color: #000 !important;
+  border-radius: 8px !important;
+  transition: background-color 0.2s, transform 0.1s !important;
+  text-transform: uppercase;
+}
+
+.movie-card button:hover {
+  background-color: #ffca2c !important;
+  transform: scale(1.02);
+}

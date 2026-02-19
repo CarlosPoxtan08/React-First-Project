@@ -1,0 +1,83 @@
+/* ==========================================================
+   CINÉPOLIS — Design System Tokens
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap');
+
+:root {
+    /* ── Brand Colors ── */
+    --cine-yellow: #ffc107;
+    --cine-yellow-dark: #e0a800;
+    --cine-yellow-glow: rgba(255, 193, 7, 0.25);
+    --cine-red: #e50914;
+    --cine-red-dark: #c40812;
+
+    /* ── Neutral Palette ── */
+    --cine-black: #0a0a0a;
+    --cine-dark: #121212;
+    --cine-surface: #1c1c1c;
+    --cine-card: #242424;
+    --cine-border: #2e2e2e;
+    --cine-muted: #555555;
+
+    /* ── Text ── */
+    --cine-text: #f5f5f5;
+    --cine-text-muted: #a0a0a0;
+    --cine-text-inverse: #0a0a0a;
+
+    /* ── Typography ── */
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --font-display: 'Bebas Neue', sans-serif;
+
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    --text-5xl: 3rem;
+
+    /* ── Spacing ── */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+    --space-16: 64px;
+    --space-20: 80px;
+
+    /* ── Border Radius ── */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-full: 9999px;
+
+    /* ── Shadows ── */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.7);
+    --shadow-gold: 0 0 20px rgba(255, 193, 7, 0.35);
+
+    /* ── Transitions ── */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-smooth: 350ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* ── Breakpoints (for JS usage) ── */
+    --bp-sm: 480px;
+    --bp-md: 768px;
+    --bp-lg: 1024px;
+    --bp-xl: 1280px;
+    --bp-2xl: 1440px;
+
+    /* ── Layout ── */
+    --container-max: 1280px;
+    --header-height: 72px;
+}

@@ -1,0 +1,106 @@
+/* ─── Cartelera.module.css ─── */
+
+.page {
+    min-height: 100vh;
+    padding: var(--space-10) 0 var(--space-16);
+}
+
+/* Hero banner at the top */
+.hero {
+    background: linear-gradient(135deg,
+            var(--cine-black) 0%,
+            #1a0a00 50%,
+            var(--cine-black) 100%);
+    padding: var(--space-16) var(--space-6) var(--space-12);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center top, rgba(255, 193, 7, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.heroTitle {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    letter-spacing: 4px;
+    color: var(--cine-yellow);
+    text-transform: uppercase;
+    margin: 0 0 var(--space-3) 0;
+    position: relative;
+}
+
+.heroSubtitle {
+    color: var(--cine-text-muted);
+    font-size: var(--text-lg);
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* Grid container */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--space-10) var(--space-6);
+}
+
+.sectionTitle {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    letter-spacing: 2px;
+    color: var(--cine-text);
+    text-transform: uppercase;
+    margin-bottom: var(--space-2);
+}
+
+.titleDivider {
+    width: 60px;
+    height: 3px;
+    background: var(--cine-yellow);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-8);
+}
+
+/* Responsive movie grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+}
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+
+    .heroTitle {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: var(--space-6) var(--space-4);
+    }
+
+    .heroTitle {
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    }
+}

@@ -1,0 +1,98 @@
+/* ==========================================================
+   CINÉPOLIS — Global Base Styles
+   ========================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--cine-dark);
+    color: var(--cine-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    font-family: var(--font-sans);
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cine-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--cine-border);
+    border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--cine-yellow);
+}
+
+/* ── Selection ── */
+::selection {
+    background-color: var(--cine-yellow);
+    color: var(--cine-black);
+}
+
+/* ── Utility: visually hidden ── */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ── Utility: gradient text ── */
+.gradient-text {
+    background: linear-gradient(135deg, var(--cine-yellow), #fff 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ── Main layout spacer for sticky header ── */
+.main-content {
+    flex: 1;
+    padding-top: var(--header-height);
+    width: 100%;
+}

@@ -1,0 +1,90 @@
+/* ─── Alimentos.module.css ─── */
+
+.page {
+    min-height: 100vh;
+    padding-bottom: var(--space-16);
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(135deg, var(--cine-black) 0%, #001a00 60%, var(--cine-black) 100%);
+    padding: var(--space-16) var(--space-6) var(--space-12);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center top, rgba(255, 193, 7, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.heroEmoji {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: var(--space-4);
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.heroTitle {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    letter-spacing: 4px;
+    color: var(--cine-yellow);
+    text-transform: uppercase;
+    margin: 0 0 var(--space-3) 0;
+    position: relative;
+}
+
+.heroSubtitle {
+    color: var(--cine-text-muted);
+    font-size: var(--text-lg);
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* Content */
+.content {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: var(--space-10) var(--space-6);
+}
+
+/* Separator between categories */
+.separator {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--cine-border), transparent);
+    margin: var(--space-10) 0;
+}
+
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 2.8rem;
+    }
+
+    .content {
+        padding: var(--space-8) var(--space-4);
+    }
+}
+
+@media (max-width: 480px) {
+    .heroTitle {
+        font-size: 2.2rem;
+    }
+}

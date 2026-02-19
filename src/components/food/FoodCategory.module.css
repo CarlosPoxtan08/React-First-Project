@@ -1,0 +1,64 @@
+/* ─── FoodCategory.module.css ─── */
+
+.category {
+    margin-bottom: var(--space-12);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+}
+
+.icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.titleGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.title {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    letter-spacing: 2px;
+    color: var(--cine-text);
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.divider {
+    width: 48px;
+    height: 2px;
+    background: var(--cine-yellow);
+    border-radius: var(--radius-full);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-5);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+    }
+
+    .title {
+        font-size: var(--text-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-3);
+    }
+}

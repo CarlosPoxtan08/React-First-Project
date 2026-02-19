@@ -1,0 +1,17 @@
+.card {
+    background-color: var(--cine-card);
+    border: 1px solid var(--cine-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition:
+        transform var(--transition-smooth),
+        box-shadow var(--transition-smooth),
+        border-color var(--transition-base);
+    position: relative;
+}
+
+.hoverable:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--cine-yellow);
+}
