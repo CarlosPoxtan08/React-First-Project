@@ -5,6 +5,7 @@ import Noticias from '../components/Noticias';
 
 const peliculas = [
     {
+        id: "seven",
         title: 'Seven',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_Zkr01DspxQbAMOvHciLw-QQRMCix7rleDA&s',
         genre: 'Thriller',
@@ -12,6 +13,7 @@ const peliculas = [
         description: 'Dos detectives, un novato y un veterano, dan caza a un asesino en serie que utiliza los siete pecados capitales como motivo de sus crímenes.',
     },
     {
+        id: "the-whale",
         title: 'The Whale',
         image: 'https://www.mubis.es/media/movies/7665/313637/la-ballena-the-whale-original.jpg',
         genre: 'Drama',
@@ -19,6 +21,7 @@ const peliculas = [
         description: 'Un solitario profesor de inglés con obesidad severa intenta reconectar con su hija adolescente distanciada, en una última oportunidad de redención.',
     },
     {
+        id: "transformers",
         title: 'Transformers',
         image: 'https://i.ebayimg.com/images/g/TpsAAOSw5VZXAxOK/s-l1200.jpg',
         genre: 'Acción',
@@ -26,6 +29,7 @@ const peliculas = [
         description: 'Una antigua lucha entre dos razas extraterrestres, los Autobots y los Decepticons, llega a la Tierra, con el destino de la humanidad en juego.',
     },
     {
+        id: "oppenheimer",
         title: 'Oppenheimer',
         image: 'https://moviepostermexico.com/cdn/shop/files/oppenheimer_ver3_xxlg_1024x1024@2x.jpg?v=1690337282',
         genre: 'Biográfico',
@@ -63,7 +67,7 @@ function Home({ favoritos = [], toggleFavorito }) {
                             description={pelicula.description}
                             isFavorite={favoritos.some(f => f.title === pelicula.title)}
                             onToggleFavorite={() => toggleFavorito && toggleFavorito(pelicula)}
-                            onVerDetalle={() => navigate('/detalle')}
+                            onVerDetalle={() => navigate(`/pelicula/${pelicula.id}`)}
                         />
                     ))}
                 </div>

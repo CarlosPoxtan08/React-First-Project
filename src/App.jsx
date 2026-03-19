@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Cartelera from "./pages/Cartelera";
-import Detalle from "./pages/Detalle";
+import DetallesPelicula from "./pages/DetallesPelicula";
 import Alimentos from "./pages/Alimentos";
-import Otros from "./pages/Otros";
+import Promociones from "./pages/Promociones";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const [favoritos, setFavoritos] = useState(() => {
@@ -23,15 +24,19 @@ function App() {
 
   return (
     <div style={{ minHeight: "100vh" }}>
-      <Header />
+      <Navbar />
 
       <main className="main-content">
         <Routes>
           <Route path="/" element={<Home favoritos={favoritos} toggleFavorito={toggleFavorito} />} />
           <Route path="/cartelera" element={<Cartelera favoritos={favoritos} toggleFavorito={toggleFavorito} />} />
-          <Route path="/detalle" element={<Detalle />} />
           <Route path="/alimentos" element={<Alimentos />} />
-          <Route path="/otros" element={<Otros />} />
+          <Route path="/promociones" element={<Promociones />} />
+          {/* Dynamic route UX: Allows deep linking to a specific movie */}
+          <Route path="/pelicula/:id" element={<DetallesPelicula />} />
+          
+          {/* Catch-all 404 route UX: Handles misspelled URLs gracefully */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
     </div>

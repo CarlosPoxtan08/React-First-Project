@@ -1,4 +1,4 @@
-import styles from './Otros.module.css';
+import styles from './Promociones.module.css';
 
 const servicios = [
     {
@@ -55,7 +55,7 @@ const servicios = [
     },
 ];
 
-function Otros() {
+function Promociones() {
     return (
         <div className={styles.page}>
             {/* Hero */}
@@ -95,4 +95,4 @@ function Otros() {
     );
 }
 
-export default Otros;
+export default Promociones;
