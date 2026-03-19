@@ -66,6 +66,17 @@
     margin-bottom: var(--space-8);
 }
 
+.emptyFavorites {
+    text-align: center;
+    padding: var(--space-8);
+    background-color: var(--cine-card);
+    border: 1px dashed var(--cine-yellow);
+    border-radius: var(--radius-lg);
+    color: var(--cine-text-muted);
+    font-size: var(--text-lg);
+    grid-column: 1 / -1;
+}
+
 /* Responsive movie grid */
 .grid {
     display: grid;

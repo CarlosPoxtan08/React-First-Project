@@ -1,6 +1,19 @@
+import { useState } from 'react';
 import styles from './MovieCard.module.css';
 
-function MovieCard({ title, image, onVerDetalle, genre, duration }) {
+function MovieCard({ title, image, onVerDetalle, genre, duration, description, isFavorite = false, onToggleFavorite }) {
+    const [showDescription, setShowDescription] = useState(false);
+
+    const handleToggleFavorite = (e) => {
+        e.stopPropagation();
+        if (onToggleFavorite) onToggleFavorite();
+    };
+
+    const toggleDescription = (e) => {
+        e.stopPropagation();
+        setShowDescription(!showDescription);
+    };
+
     return (
         <div className={styles.card} onClick={onVerDetalle}>
             {/* Poster image with overlay */}
@@ -10,6 +23,15 @@ function MovieCard({ title, image, onVerDetalle, genre, duration }) {
                     alt={title}
                     className={styles.image}
                 />
+
+                <button
+                    className={`${styles.favoriteBtn} ${isFavorite ? styles.favoriteActive : ''}`}
+                    onClick={handleToggleFavorite}
+                    title="Marcar como favorita"
+                >
+                    {isFavorite ? '❤️' : '🤍'}
+                </button>
+
                 <div className={styles.imageOverlay} />
 
                 {/* Genre & Duration badges */}
@@ -32,6 +54,21 @@ function MovieCard({ title, image, onVerDetalle, genre, duration }) {
             {/* Content area */}
             <div className={styles.content}>
                 <h3 className={styles.title}>{title}</h3>
+
+                {description && (
+                    <div className={styles.descriptionContainer}>
+                        <button
+                            className={styles.toggleDescBtn}
+                            onClick={toggleDescription}
+                        >
+                            {showDescription ? 'Ver menos' : 'Ver más'}
+                        </button>
+                        {showDescription && (
+                            <p className={styles.descriptionText}>{description}</p>
+                        )}
+                    </div>
+                )}
+
                 <div className={styles.btnWrapper}>
                     <button
                         className={styles.btn}
